@@ -4,7 +4,9 @@ let addToDoList = document.getElementById('addToDoList');
 
 
 addToDoButton.addEventListener('click', function(){
-    var paragraph = document.createElement('li');
+
+    if (inputField.value.length > 0 ) {
+        var paragraph = document.createElement('li');
     paragraph.innerText = inputField.value;
     paragraph.classList.add('paragraph-styling');
     addToDoList.appendChild(paragraph);
@@ -15,6 +17,9 @@ addToDoButton.addEventListener('click', function(){
     addToDoList.addEventListener('dblclick', function(){
         addToDoList.removeChild(paragraph);
     })
+    } else {
+        alert('You have to add text:')
+    }
 
-})
+});
 
